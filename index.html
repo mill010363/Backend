@@ -1,3 +1,398 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-tw" style="width:100vw">
 
+<head>
+    <title>好盒器 後台管理系統</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, height=device-height"/>   
+    <meta name="apple-mobile-web-app-capable" content="yes" />   
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        function empty() {
+            var phone = document.createElement('td');
+            phone.innerHTML = "<input class='user_phone' value=''>"
+            
+            var shop = document.createElement('td');
+            shop.innerHTML = "<select class='shop'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select>";
+
+            var borrow = document.createElement('td');
+            borrow.innerHTML = 
+
+            var returned = document.createElement('td');
+
+
+            var buttons = document.createElement('td');
+            return 
+        }
+
+        function modify(row){
+            var childs = [];
+            
+            for (var i = 0 ; i < row.childNodes.length ; i++) {
+                if (row.childNodes[i].nodeType == 3 )
+                    continue;
+                childs.push(row.childNodes[i]);
+            }
+            
+            let phone = childs[0].textContent;
+            let store = childs[1].getAttribute('shop_id');
+            let borrowed = childs[2].textContent.split(' ');
+            let borrowed_date = borrowed[0].split('/');
+            let borrowed_time = borrowed[1].split(':');
+
+            var returned = childs[3].textContent;
+            var returned_date = '';
+            var returned_time = '';
+
+            if (returned == 'N/A') {
+                returned = returned.split(' ');
+
+                returned_date = returned[0].split('/');
+                returned_time = returned[1].split(':');
+            }
+
+            console.log(store)
+
+            for (var i = 0 ; i < row.childNodes.length ; i++) {
+                if (row.childNodes[i].nodeType == 3 )
+                    continue;
+                childs.push(row.childNodes[i]);
+            }
+        }
+    </script>
+    <header>    
+        <nav id="main_nav">
+            <div id='cssmenu'>
+                <ul>
+                    <li class='active'><a>記錄管理</a>
+                    </li>
+                    <li><a href='/checkedList'>人員管理</a>
+                    </li>
+                    <li><a href='/lotteryRecord'>數據分析</a>
+                    </li>
+                </ul>
+            </div>
+            <b id="goodtogo">後台系統</b>
+        </nav>
+    </header>
+
+    <div id='main_container'>
+        <table id='record_table'>
+            <thead>
+                <tr>
+                    <th>用戶</th>
+                    <th>店家</th>
+                    <th>借出時間</th>
+                    <th>歸還時間</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input class='user_phone' value='0933356403'></td>
+                    <td><select class='shop'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select></td>
+                    <td><select class='borrowed year'>
+                            <option id='2017'>2017</option>
+                        </select>/
+                        <select class='borrowed month'>
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='04'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                        </select>/
+                        <select class='borrowed day'>
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='04'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                            <option id='13'>13</option>
+                            <option id='14'>14</option>
+                            <option id='15'>15</option>
+                            <option id='16'>16</option>
+                            <option id='17'>17</option>
+                            <option id='18'>18</option>
+                            <option id='19'>19</option>
+                            <option id='20'>20</option>
+                            <option id='21'>21</option>
+                            <option id='22'>22</option>
+                            <option id='23'>23</option>
+                            <option id='24'>24</option>
+                            <option id='25'>25</option>
+                            <option id='26'>26</option>
+                            <option id='27'>27</option>
+                            <option id='28'>28</option>
+                            <option id='29'>29</option>
+                            <option id='30'>30</option>  
+                            <option id='31'>31</option>                            
+                        </select><br/>
+                        <select class='borrowed hour'>
+                            <option id='00'>00</option>
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='40'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                            <option id='13'>13</option>
+                            <option id='14'>14</option>
+                            <option id='15'>15</option>
+                            <option id='16'>16</option>
+                            <option id='17'>17</option>
+                            <option id='18'>18</option>
+                            <option id='19'>19</option>
+                            <option id='20'>20</option>
+                            <option id='21'>21</option>
+                            <option id='22'>22</option>
+                            <option id='23'>23</option>
+                            <option id='24'>24</option>
+                        </select> :
+                        <select class='borrowed minute'>
+                                <option id='00'>00</option>                                
+                                <option id='01'>01</option>
+                                <option id='02'>02</option>
+                                <option id='03'>03</option>
+                                <option id='04'>04</option>
+                                <option id='05'>05</option>
+                                <option id='06'>06</option>
+                                <option id='07'>07</option>
+                                <option id='08'>08</option>
+                                <option id='09'>09</option>
+                                <option id='10'>10</option>
+                                <option id='11'>11</option>
+                                <option id='12'>12</option>
+                                <option id='13'>13</option>
+                                <option id='14'>14</option>
+                                <option id='15'>15</option>
+                                <option id='16'>16</option>
+                                <option id='17'>17</option>
+                                <option id='18'>18</option>
+                                <option id='19'>19</option>
+                                <option id='20'>20</option>
+                                <option id='21'>21</option>
+                                <option id='22'>22</option>
+                                <option id='23'>23</option>
+                                <option id='24'>24</option>
+                                <option id='25'>25</option>
+                                <option id='26'>26</option>
+                                <option id='27'>27</option>
+                                <option id='28'>28</option>
+                                <option id='29'>29</option>
+                                <option id='30'>30</option>  
+                                <option id='31'>31</option>
+                                <option id='32'>32</option>
+                                <option id='33'>33</option>
+                                <option id='34'>34</option>
+                                <option id='35'>35</option>
+                                <option id='36'>36</option>
+                                <option id='37'>37</option>
+                                <option id='38'>38</option>
+                                <option id='39'>39</option>
+                                <option id='40'>40</option>
+                                <option id='41'>41</option>
+                                <option id='42'>42</option>
+                                <option id='43'>43</option>
+                                <option id='44'>44</option>
+                                <option id='45'>45</option>
+                                <option id='46'>46</option>
+                                <option id='47'>47</option>
+                                <option id='48'>48</option>
+                                <option id='49'>49</option>
+                                <option id='50'>50</option>
+                                <option id='51'>51</option>
+                                <option id='52'>52</option>
+                                <option id='53'>53</option>
+                                <option id='54'>54</option>
+                                <option id='55'>55</option>
+                                <option id='56'>56</option>
+                                <option id='57'>57</option>
+                                <option id='58'>58</option>
+                                <option id='59'>59</option>
+                                <option id='60'>60</option>
+                        </select>
+                    </td>
+                    <td><select class='return year'>
+                            <option id='2017'>2017</option>
+                        </select>/
+                        <select class='return month'>
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='04'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                        </select>/
+                        <select class='return day'>
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='04'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                            <option id='13'>13</option>
+                            <option id='14'>14</option>
+                            <option id='15'>15</option>
+                            <option id='16'>16</option>
+                            <option id='17'>17</option>
+                            <option id='18'>18</option>
+                            <option id='19'>19</option>
+                            <option id='20'>20</option>
+                            <option id='21'>21</option>
+                            <option id='22'>22</option>
+                            <option id='23'>23</option>
+                            <option id='24'>24</option>
+                            <option id='25'>25</option>
+                            <option id='26'>26</option>
+                            <option id='27'>27</option>
+                            <option id='28'>28</option>
+                            <option id='29'>29</option>
+                            <option id='30'>30</option>  
+                            <option id='31'>31</option>                            
+                        </select><br/>
+                        <select class='return hour'>
+                            <option id='00'>00</option>                                
+                            <option id='01'>01</option>
+                            <option id='02'>02</option>
+                            <option id='03'>03</option>
+                            <option id='04'>04</option>
+                            <option id='05'>05</option>
+                            <option id='06'>06</option>
+                            <option id='07'>07</option>
+                            <option id='08'>08</option>
+                            <option id='09'>09</option>
+                            <option id='10'>10</option>
+                            <option id='11'>11</option>
+                            <option id='12'>12</option>
+                            <option id='13'>13</option>
+                            <option id='14'>14</option>
+                            <option id='15'>15</option>
+                            <option id='16'>16</option>
+                            <option id='17'>17</option>
+                            <option id='18'>18</option>
+                            <option id='19'>19</option>
+                            <option id='20'>20</option>
+                            <option id='21'>21</option>
+                            <option id='22'>22</option>
+                            <option id='23'>23</option>
+                            <option id='24'>24</option>
+                        </select> :
+                        <select class='return minute'>
+                                <option id='00'>00</option>                                
+                                <option id='01'>01</option>
+                                <option id='02'>02</option>
+                                <option id='03'>03</option>
+                                <option id='04'>04</option>
+                                <option id='05'>05</option>
+                                <option id='06'>06</option>
+                                <option id='07'>07</option>
+                                <option id='08'>08</option>
+                                <option id='09'>09</option>
+                                <option id='10'>10</option>
+                                <option id='11'>11</option>
+                                <option id='12'>12</option>
+                                <option id='13'>13</option>
+                                <option id='14'>14</option>
+                                <option id='15'>15</option>
+                                <option id='16'>16</option>
+                                <option id='17'>17</option>
+                                <option id='18'>18</option>
+                                <option id='19'>19</option>
+                                <option id='20'>20</option>
+                                <option id='21'>21</option>
+                                <option id='22'>22</option>
+                                <option id='23'>23</option>
+                                <option id='24'>24</option>
+                                <option id='25'>25</option>
+                                <option id='26'>26</option>
+                                <option id='27'>27</option>
+                                <option id='28'>28</option>
+                                <option id='29'>29</option>
+                                <option id='30'>30</option>  
+                                <option id='31'>31</option>
+                                <option id='32'>32</option>
+                                <option id='33'>33</option>
+                                <option id='34'>34</option>
+                                <option id='35'>35</option>
+                                <option id='36'>36</option>
+                                <option id='37'>37</option>
+                                <option id='38'>38</option>
+                                <option id='39'>39</option>
+                                <option id='40'>40</option>
+                                <option id='41'>41</option>
+                                <option id='42'>42</option>
+                                <option id='43'>43</option>
+                                <option id='44'>44</option>
+                                <option id='45'>45</option>
+                                <option id='46'>46</option>
+                                <option id='47'>47</option>
+                                <option id='48'>48</option>
+                                <option id='49'>49</option>
+                                <option id='50'>50</option>
+                                <option id='51'>51</option>
+                                <option id='52'>52</option>
+                                <option id='53'>53</option>
+                                <option id='54'>54</option>
+                                <option id='55'>55</option>
+                                <option id='56'>56</option>
+                                <option id='57'>57</option>
+                                <option id='58'>58</option>
+                                <option id='59'>59</option>
+                                <option id='60'>60</option>
+                        </select></td>
+                    <td><div class='panel'><input type="button" class='modify' value='修改'/><input type="button" class='delete' value='刪除'/></div></td>
+                </tr>
+                <tr>
+                    <td>0933356403</td>
+                    <td shop_id='0'>布萊恩紅茶</td>
+                    <td>2017/10/20 20:00</td>
+                    <td>2017/10/31 20:00</td>
+                    <td><div class='panel'><input type="button" class='modify' value='修改' onclick='modify(this.parentNode.parentNode.parentNode)'/><input type="button" class='delete' value='刪除'/></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        
+
+    </script>
+</body>
 </html>
