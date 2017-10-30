@@ -18,16 +18,22 @@
             phone.innerHTML = "<input class='user_phone' value=''>"
             
             var shop = document.createElement('td');
-            shop.innerHTML = "<select class='shop'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select>";
+            shop.innerHTML = "<select class='shop' id='shop'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select>";
 
             var borrow = document.createElement('td');
-            borrow.innerHTML = 
+            borrow.innerHTML = "<select class='borrowed year'> <option id='2017'>2017</option> </select > / <select class='borrowed month'> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> </select > / <select class='borrowed day'> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> <option id='25'>25</option> <option id='26'>26</option> <option id='27'>27</option> <option id='28'>28</option> <option id='29'>29</option> <option id='30'>30</option> <option id='31'>31</option> </select ><br/> <select class='borrowed hour'> <option id='00'>00</option> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='40'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> </select >:<select class='borrowed minute'> <option id='00'>00</option> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> <option id='25'>25</option> <option id='26'>26</option> <option id='27'>27</option> <option id='28'>28</option> <option id='29'>29</option> <option id='30'>30</option> <option id='31'>31</option> <option id='32'>32</option> <option id='33'>33</option> <option id='34'>34</option> <option id='35'>35</option> <option id='36'>36</option> <option id='37'>37</option> <option id='38'>38</option> <option id='39'>39</option> <option id='40'>40</option> <option id='41'>41</option> <option id='42'>42</option> <option id='43'>43</option> <option id='44'>44</option> <option id='45'>45</option> <option id='46'>46</option> <option id='47'>47</option> <option id='48'>48</option> <option id='49'>49</option> <option id='50'>50</option> <option id='51'>51</option> <option id='52'>52</option> <option id='53'>53</option> <option id='54'>54</option> <option id='55'>55</option> <option id='56'>56</option> <option id='57'>57</option> <option id='58'>58</option> <option id='59'>59</option> <option id='60'>60</option> </select >"
 
             var returned = document.createElement('td');
+            returned.innerHTML = "<select class='returned year'> <option id='2017'>2017</option> </select > / <select class='returned month'> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> </select > / <select class='returned day'> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> <option id='25'>25</option> <option id='26'>26</option> <option id='27'>27</option> <option id='28'>28</option> <option id='29'>29</option> <option id='30'>30</option> <option id='31'>31</option> </select ><br/> <select class='returned hour'> <option id='00'>00</option> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='40'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> </select >:<select class='returned minute'> <option id='00'>00</option> <option id='01'>01</option> <option id='02'>02</option> <option id='03'>03</option> <option id='04'>04</option> <option id='05'>05</option> <option id='06'>06</option> <option id='07'>07</option> <option id='08'>08</option> <option id='09'>09</option> <option id='10'>10</option> <option id='11'>11</option> <option id='12'>12</option> <option id='13'>13</option> <option id='14'>14</option> <option id='15'>15</option> <option id='16'>16</option> <option id='17'>17</option> <option id='18'>18</option> <option id='19'>19</option> <option id='20'>20</option> <option id='21'>21</option> <option id='22'>22</option> <option id='23'>23</option> <option id='24'>24</option> <option id='25'>25</option> <option id='26'>26</option> <option id='27'>27</option> <option id='28'>28</option> <option id='29'>29</option> <option id='30'>30</option> <option id='31'>31</option> <option id='32'>32</option> <option id='33'>33</option> <option id='34'>34</option> <option id='35'>35</option> <option id='36'>36</option> <option id='37'>37</option> <option id='38'>38</option> <option id='39'>39</option> <option id='40'>40</option> <option id='41'>41</option> <option id='42'>42</option> <option id='43'>43</option> <option id='44'>44</option> <option id='45'>45</option> <option id='46'>46</option> <option id='47'>47</option> <option id='48'>48</option> <option id='49'>49</option> <option id='50'>50</option> <option id='51'>51</option> <option id='52'>52</option> <option id='53'>53</option> <option id='54'>54</option> <option id='55'>55</option> <option id='56'>56</option> <option id='57'>57</option> <option id='58'>58</option> <option id='59'>59</option> <option id='60'>60</option> </select >"
+
+            var shop_returned = document.createElement('td');
+            shop_returned.innerHTML = "<select class='shop_returned' id='shop_returned'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select>";
 
 
-            var buttons = document.createElement('td');
-            return 
+            var panel = document.createElement('td');
+            panel.innerHTML = "<div class='panel'><input type='button' class='save' value='保存' onclick='save(this.parentNode.parentNode.parentNode, true)'/><input type='button' class='cancle' value='取消' onclick='save(this.parentNode.parentNode.parentNode, false)'/></div>"
+
+            return [phone, shop, borrow, returned, shop_returned, panel];
         }
 
         function modify(row){
@@ -41,6 +47,7 @@
             
             let phone = childs[0].textContent;
             let store = childs[1].getAttribute('shop_id');
+            let returned_place = childs[4].getAttribute('shop_id');
             let borrowed = childs[2].textContent.split(' ');
             let borrowed_date = borrowed[0].split('/');
             let borrowed_time = borrowed[1].split(':');
@@ -49,21 +56,86 @@
             var returned_date = '';
             var returned_time = '';
 
-            if (returned == 'N/A') {
+            if (returned != 'N/A') {
                 returned = returned.split(' ');
 
                 returned_date = returned[0].split('/');
                 returned_time = returned[1].split(':');
             }
 
-            console.log(store)
+            var new_row = empty();
 
+            new_row[0].firstChild.value = phone;
+            new_row[1].firstChild.value = store;
+            new_row[2].childNodes[0].value = borrowed_date[0];
+            new_row[2].childNodes[2].value = borrowed_date[1];
+            new_row[2].childNodes[4].value = borrowed_date[2];
+            new_row[2].childNodes[7].value = borrowed_time[0];
+            new_row[2].childNodes[9].value = borrowed_time[1];
+            new_row[3].childNodes[0].value = returned_date[0];
+            new_row[3].childNodes[2].value = returned_date[1];
+            new_row[3].childNodes[4].value = returned_date[2];
+            new_row[3].childNodes[7].value = returned_time[0];
+            new_row[3].childNodes[9].value = returned_time[1];
+            new_row[4].firstChild.value = returned_place;
+
+            new_row[0].firstChild.setAttribute('origin', phone);
+            new_row[1].firstChild.setAttribute('origin', store);
+            new_row[2].childNodes[0].setAttribute('origin',borrowed_date[0]);
+            new_row[2].childNodes[2].setAttribute('origin', borrowed_date[1]);
+            new_row[2].childNodes[4].setAttribute('origin', borrowed_date[2]);
+            new_row[2].childNodes[7].setAttribute('origin', borrowed_time[0]);
+            new_row[2].childNodes[9].setAttribute('origin', borrowed_time[1]);
+            new_row[3].childNodes[0].setAttribute('origin', returned_date[0]);
+            new_row[3].childNodes[2].setAttribute('origin', returned_date[1]);
+            new_row[3].childNodes[4].setAttribute('origin', returned_date[2]);
+            new_row[3].childNodes[7].setAttribute('origin', returned_time[0]);
+            new_row[3].childNodes[9].setAttribute('origin', returned_time[1]);
+            new_row[4].firstChild.setAttribute('origin', returned_place);
+            
+            while(row.firstChild)
+                row.removeChild(row.firstChild);
+
+            for (var i = 0 ; i < 6 ; i++) {
+                row.appendChild(new_row[i]);
+            }    
+        }
+
+        function save(row, update) {
+            var childs = [];
+            
             for (var i = 0 ; i < row.childNodes.length ; i++) {
                 if (row.childNodes[i].nodeType == 3 )
                     continue;
                 childs.push(row.childNodes[i]);
             }
+
+            var phone = update ? childs[0].firstChild.value : childs[0].firstChild.getAttribute('origin');
+            var store = update ? childs[1].firstChild.value : childs[1].firstChild.getAttribute('origin');
+            var borrowed_time = update ? childs[2].childNodes[0].value + '/' + childs[2].childNodes[2].value + '/' + childs[2].childNodes[4].value + ' ' + childs[2].childNodes[7].value + ':' + childs[2].childNodes[9].value : childs[2].childNodes[0].getAttribute('origin') + '/' + childs[2].childNodes[2].getAttribute('origin') + '/' + childs[2].childNodes[4].getAttribute('origin') + ' ' + childs[2].childNodes[7].getAttribute('origin') + ':' + childs[2].childNodes[9].getAttribute('origin');
+            var returned_time = update ? childs[3].childNodes[0].value + '/' + childs[3].childNodes[2].value + '/' + childs[3].childNodes[4].value + ' ' + childs[3].childNodes[7].value + ':' + childs[3].childNodes[9].value : childs[3].childNodes[0].getAttribute('origin') + '/' + childs[3].childNodes[2].getAttribute('origin') + '/' + childs[3].childNodes[4].getAttribute('origin') + ' ' + childs[3].childNodes[7].getAttribute('origin') + ':' + childs[3].childNodes[9].getAttribute('origin');
+            var returned_place = update ? childs[4].firstChild.value : childs[4].firstChild.getAttribute('origin');
+            var panel = "<div class='panel'><input type='button' class='modify' value='修改' onclick='modify(this.parentNode.parentNode.parentNode)'/><input type='button' class='delete' value='刪除' onclick='delete_row(this.parentNode.parentNode.parentNode)'/></div>"
+
+            var store_text = $("#shop option[value='" + store +"']").text();
+            var returned_place_text = $("#shop_returned option[value='" + returned_place +"']").text();
+
+            var new_row = [phone, store_text, borrowed_time, returned_time, returned_place_text, panel];
+
+            for ( var i = 0 ; i < row.childNodes.length ; i++) {
+                if (i === 1 || i === 4) 
+                    row.childNodes[i].setAttribute('shop_id', i===1?store:returned_place);
+            
+                row.childNodes[i].innerHTML = new_row[i];
+            }
         }
+
+        function delete_row(row) {
+            if (confirm("確認刪除該筆資料？")) {
+                row.parentNode.removeChild(row);
+            }
+        }
+
     </script>
     <header>    
         <nav id="main_nav">
@@ -89,302 +161,18 @@
                     <th>店家</th>
                     <th>借出時間</th>
                     <th>歸還時間</th>
+                    <th>歸還地點</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input class='user_phone' value='0933356403'></td>
-                    <td><select class='shop'><option value='0'>布萊恩紅茶</option><option value='1'>正興咖啡館</option></select></td>
-                    <td><select class='borrowed year'>
-                            <option id='2017'>2017</option>
-                        </select>/
-                        <select class='borrowed month'>
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='04'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                        </select>/
-                        <select class='borrowed day'>
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='04'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                            <option id='13'>13</option>
-                            <option id='14'>14</option>
-                            <option id='15'>15</option>
-                            <option id='16'>16</option>
-                            <option id='17'>17</option>
-                            <option id='18'>18</option>
-                            <option id='19'>19</option>
-                            <option id='20'>20</option>
-                            <option id='21'>21</option>
-                            <option id='22'>22</option>
-                            <option id='23'>23</option>
-                            <option id='24'>24</option>
-                            <option id='25'>25</option>
-                            <option id='26'>26</option>
-                            <option id='27'>27</option>
-                            <option id='28'>28</option>
-                            <option id='29'>29</option>
-                            <option id='30'>30</option>  
-                            <option id='31'>31</option>                            
-                        </select><br/>
-                        <select class='borrowed hour'>
-                            <option id='00'>00</option>
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='40'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                            <option id='13'>13</option>
-                            <option id='14'>14</option>
-                            <option id='15'>15</option>
-                            <option id='16'>16</option>
-                            <option id='17'>17</option>
-                            <option id='18'>18</option>
-                            <option id='19'>19</option>
-                            <option id='20'>20</option>
-                            <option id='21'>21</option>
-                            <option id='22'>22</option>
-                            <option id='23'>23</option>
-                            <option id='24'>24</option>
-                        </select> :
-                        <select class='borrowed minute'>
-                                <option id='00'>00</option>                                
-                                <option id='01'>01</option>
-                                <option id='02'>02</option>
-                                <option id='03'>03</option>
-                                <option id='04'>04</option>
-                                <option id='05'>05</option>
-                                <option id='06'>06</option>
-                                <option id='07'>07</option>
-                                <option id='08'>08</option>
-                                <option id='09'>09</option>
-                                <option id='10'>10</option>
-                                <option id='11'>11</option>
-                                <option id='12'>12</option>
-                                <option id='13'>13</option>
-                                <option id='14'>14</option>
-                                <option id='15'>15</option>
-                                <option id='16'>16</option>
-                                <option id='17'>17</option>
-                                <option id='18'>18</option>
-                                <option id='19'>19</option>
-                                <option id='20'>20</option>
-                                <option id='21'>21</option>
-                                <option id='22'>22</option>
-                                <option id='23'>23</option>
-                                <option id='24'>24</option>
-                                <option id='25'>25</option>
-                                <option id='26'>26</option>
-                                <option id='27'>27</option>
-                                <option id='28'>28</option>
-                                <option id='29'>29</option>
-                                <option id='30'>30</option>  
-                                <option id='31'>31</option>
-                                <option id='32'>32</option>
-                                <option id='33'>33</option>
-                                <option id='34'>34</option>
-                                <option id='35'>35</option>
-                                <option id='36'>36</option>
-                                <option id='37'>37</option>
-                                <option id='38'>38</option>
-                                <option id='39'>39</option>
-                                <option id='40'>40</option>
-                                <option id='41'>41</option>
-                                <option id='42'>42</option>
-                                <option id='43'>43</option>
-                                <option id='44'>44</option>
-                                <option id='45'>45</option>
-                                <option id='46'>46</option>
-                                <option id='47'>47</option>
-                                <option id='48'>48</option>
-                                <option id='49'>49</option>
-                                <option id='50'>50</option>
-                                <option id='51'>51</option>
-                                <option id='52'>52</option>
-                                <option id='53'>53</option>
-                                <option id='54'>54</option>
-                                <option id='55'>55</option>
-                                <option id='56'>56</option>
-                                <option id='57'>57</option>
-                                <option id='58'>58</option>
-                                <option id='59'>59</option>
-                                <option id='60'>60</option>
-                        </select>
-                    </td>
-                    <td><select class='return year'>
-                            <option id='2017'>2017</option>
-                        </select>/
-                        <select class='return month'>
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='04'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                        </select>/
-                        <select class='return day'>
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='04'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                            <option id='13'>13</option>
-                            <option id='14'>14</option>
-                            <option id='15'>15</option>
-                            <option id='16'>16</option>
-                            <option id='17'>17</option>
-                            <option id='18'>18</option>
-                            <option id='19'>19</option>
-                            <option id='20'>20</option>
-                            <option id='21'>21</option>
-                            <option id='22'>22</option>
-                            <option id='23'>23</option>
-                            <option id='24'>24</option>
-                            <option id='25'>25</option>
-                            <option id='26'>26</option>
-                            <option id='27'>27</option>
-                            <option id='28'>28</option>
-                            <option id='29'>29</option>
-                            <option id='30'>30</option>  
-                            <option id='31'>31</option>                            
-                        </select><br/>
-                        <select class='return hour'>
-                            <option id='00'>00</option>                                
-                            <option id='01'>01</option>
-                            <option id='02'>02</option>
-                            <option id='03'>03</option>
-                            <option id='04'>04</option>
-                            <option id='05'>05</option>
-                            <option id='06'>06</option>
-                            <option id='07'>07</option>
-                            <option id='08'>08</option>
-                            <option id='09'>09</option>
-                            <option id='10'>10</option>
-                            <option id='11'>11</option>
-                            <option id='12'>12</option>
-                            <option id='13'>13</option>
-                            <option id='14'>14</option>
-                            <option id='15'>15</option>
-                            <option id='16'>16</option>
-                            <option id='17'>17</option>
-                            <option id='18'>18</option>
-                            <option id='19'>19</option>
-                            <option id='20'>20</option>
-                            <option id='21'>21</option>
-                            <option id='22'>22</option>
-                            <option id='23'>23</option>
-                            <option id='24'>24</option>
-                        </select> :
-                        <select class='return minute'>
-                                <option id='00'>00</option>                                
-                                <option id='01'>01</option>
-                                <option id='02'>02</option>
-                                <option id='03'>03</option>
-                                <option id='04'>04</option>
-                                <option id='05'>05</option>
-                                <option id='06'>06</option>
-                                <option id='07'>07</option>
-                                <option id='08'>08</option>
-                                <option id='09'>09</option>
-                                <option id='10'>10</option>
-                                <option id='11'>11</option>
-                                <option id='12'>12</option>
-                                <option id='13'>13</option>
-                                <option id='14'>14</option>
-                                <option id='15'>15</option>
-                                <option id='16'>16</option>
-                                <option id='17'>17</option>
-                                <option id='18'>18</option>
-                                <option id='19'>19</option>
-                                <option id='20'>20</option>
-                                <option id='21'>21</option>
-                                <option id='22'>22</option>
-                                <option id='23'>23</option>
-                                <option id='24'>24</option>
-                                <option id='25'>25</option>
-                                <option id='26'>26</option>
-                                <option id='27'>27</option>
-                                <option id='28'>28</option>
-                                <option id='29'>29</option>
-                                <option id='30'>30</option>  
-                                <option id='31'>31</option>
-                                <option id='32'>32</option>
-                                <option id='33'>33</option>
-                                <option id='34'>34</option>
-                                <option id='35'>35</option>
-                                <option id='36'>36</option>
-                                <option id='37'>37</option>
-                                <option id='38'>38</option>
-                                <option id='39'>39</option>
-                                <option id='40'>40</option>
-                                <option id='41'>41</option>
-                                <option id='42'>42</option>
-                                <option id='43'>43</option>
-                                <option id='44'>44</option>
-                                <option id='45'>45</option>
-                                <option id='46'>46</option>
-                                <option id='47'>47</option>
-                                <option id='48'>48</option>
-                                <option id='49'>49</option>
-                                <option id='50'>50</option>
-                                <option id='51'>51</option>
-                                <option id='52'>52</option>
-                                <option id='53'>53</option>
-                                <option id='54'>54</option>
-                                <option id='55'>55</option>
-                                <option id='56'>56</option>
-                                <option id='57'>57</option>
-                                <option id='58'>58</option>
-                                <option id='59'>59</option>
-                                <option id='60'>60</option>
-                        </select></td>
-                    <td><div class='panel'><input type="button" class='modify' value='修改'/><input type="button" class='delete' value='刪除'/></div></td>
-                </tr>
-                <tr>
                     <td>0933356403</td>
                     <td shop_id='0'>布萊恩紅茶</td>
                     <td>2017/10/20 20:00</td>
                     <td>2017/10/31 20:00</td>
-                    <td><div class='panel'><input type="button" class='modify' value='修改' onclick='modify(this.parentNode.parentNode.parentNode)'/><input type="button" class='delete' value='刪除'/></div></td>
+                    <td shop_id='1'>正興咖啡館</td>
+                    <td><div class='panel'><input type="button" class='modify' value='修改' onclick='modify(this.parentNode.parentNode.parentNode)'/><input type="button" class='delete' value='刪除' onclick='delete_row(this.parentNode.parentNode.parentNode)'/></div></td>
                 </tr>
             </tbody>
         </table>
